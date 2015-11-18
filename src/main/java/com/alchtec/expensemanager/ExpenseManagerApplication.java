@@ -51,6 +51,7 @@ public class ExpenseManagerApplication extends Application<ExpenseManagerConfigu
 	    final ExpenseDAO dao = jdbi.onDemand(ExpenseDAO.class);
 	    
 	    /*Create the underlying table/s required by the application*/
+	    dao.createDatabaseSchema();
 	    dao.createExpenseSchemaTable();
 	    
 	    final ExpenseManagerResource resource = new ExpenseManagerResource(dao);

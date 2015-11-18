@@ -31,5 +31,8 @@ public interface ExpenseDAO {
 	
 	@SqlQuery("select * from Expense")
 	public ImmutableList<Expense> retrieveExpenses() throws SQLException;
+	
+	@SqlUpdate("create database if not exists coding_challenge")
+	public void createDatabaseSchema();
 }
 
