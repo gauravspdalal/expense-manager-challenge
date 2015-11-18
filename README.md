@@ -35,7 +35,7 @@ Perform the below steps to build the application jar and run the same.
 
 5. Run the jar by navigating to the target and run the below command:
 
-	java –jar <<jar_name>>.jar server <<configuration-file-name>>.yml
+	java –jar your_jar_name.jar server your-configuration-file-name.yml
 
 In our case it should be: 
 	
