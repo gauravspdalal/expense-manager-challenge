@@ -10,9 +10,10 @@ iii. Maintain and Display a list of all expenses added by the user.
 
 ## Build and Run the Application
 
+I forked the existing repository and renamed it to expense-manager-challenge
 The source code for the application has been uploaded to the following GIT repository.
 
-https://github.com/gauravspdalal/curr-conv-app.git
+https://github.com/gauravspdalal/expense-manager-challenge/
 
 Before proceeding with installation, ensure that the pre-requisites are taken care of:
 
@@ -20,36 +21,28 @@ Before proceeding with installation, ensure that the pre-requisites are taken ca
 
 2. JRE 8 is available.
 
-Perform the below steps to build the application war and run the same.
+Perform the below steps to build the application jar and run the same.
 
 1. Download the source code from the Git Repository.
 
 2. Using the Command Prompt window, navigate to the source code folder. (This should contain the pom.xml)
 
-3. Build the application using the following maven command: mvn clean install
+3. Build the application using the following maven command: 
+	
+		mvn clean install
 
-4. An executable war file will be created in the target folder.
+4. An executable jar file will be created in the target folder.
 
-5. Run the war by navigating to the target and run the below command:
+5. Run the jar by navigating to the target and run the below command:
 
-java –jar <war_name>.war
+	java –jar <jar_name>.jar server <configuration-file-name>.yml
 
-In our case it should be: java –jar curr-conv-app.war
+In our case it should be: 
+	
+	java -jar target/expense-manager-application-1.0.0.jar server expense-manager-configuration.yml
 
-6. This will invoke the Spring Boot application, which will finally make application available to end user. 
+6. This will invoke the Dropwizard ExpenseManagerApplication, which will finally make application available to end user. 
 
-7. The application has been deployed and is available at the following location:
-
-https://curr-conv-app.herokuapp.com/
-
-Build the project using
-
-    mvn clean install
-
-Run up the following command to start the application as a stand-alone process
-
-    java -jar target/expense-manager-application-1.0.0.jar server expense-manager-configuration.yml
-    
     
 ## Accessing the application
 
