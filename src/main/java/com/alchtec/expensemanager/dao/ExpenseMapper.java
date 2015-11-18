@@ -9,7 +9,7 @@ import org.skife.jdbi.v2.tweak.ResultSetMapper;
 import com.alchtec.expensemanager.representations.Expense;
 
 /**
- * 
+ * Mapper class to map the database result set with the java representation class.
  * @author dalalgau
  *
  */

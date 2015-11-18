@@ -1,40 +1,76 @@
-Goal
-====
-Produce a simple web-app backend to complement the supplied front-end code.
+# Expense Manager Application
 
-Mandatory Work
---------------
-Fork this repository. Starting with the provided HTML, CSS, and JS, create a Java-based REST API that:
+## Description
 
-1. Saves expenses as entered to a database.
-2. Retrieves them for display on the page. 
-3. Add a new column to the table displaying the VAT amount for each expense.
-4. Alter the README to contain instructions on how to build and run your app.
+This module is responsible for the following:
 
-VAT is the UK’s sales tax. It is 20% of the value of the expense, and is included in the amount entered by the user.
+i. Providing a UI to Add Expenses to the database.
+ii. VAT Amount can be calculated on the fly. (Assuming that the Amount value entered is inclusive of 20% VAT).
+iii. Maintain and Display a list of all expenses added by the user. 
 
-Give our account `alchemytec` access to your fork, and send us an email when you’re done. Feel free to ask questions if anything is unclear, confusing, or just plain missing.
+## Build and Run the Application
 
-Extra Credit
-------------
-Calculate the VAT client-side as the user enters a new expense, before they save the expense to the database.
+The source code for the application has been uploaded to the following GIT repository.
 
-Questions
----------
-##### What frameworks can I use?
-That’s entirely up to you, as long as they’re OSS. We’ll ask you to explain the choices you’ve made. Please pick something you're familiar with, as you'll need to be able to discuss it.
+https://github.com/gauravspdalal/curr-conv-app.git
 
-##### What application servers can I use?
-Anyone you like, as long as it’s available OSS. You’ll have to justify your decision. We use dropwizard and Tomcat internally. Please pick something you're familiar with, as you'll need to be able to discuss it.
+Before proceeding with installation, ensure that the pre-requisites are taken care of:
 
-##### What database should I use?
-MySQL or PostgreSQL. We use MySQL in-house.
+1. Maven 3 is installed.
 
-##### What will you be grading me on?
-Elegance, robustness, understanding of the technologies you use, tests, security. 
+2. JRE 8 is available.
 
-##### Will I have a chance to explain my choices?
-Feel free to comment your code, or put explanations in a pull request within the repo. If we proceed to a phone interview, we’ll be asking questions about why you made the choices you made. 
+Perform the below steps to build the application war and run the same.
 
-##### Why doesn’t the test include X?
-Good question. Feel free to tell us how to make the test better. Or, you know, fork it and improve it!
+1. Download the source code from the Git Repository.
+
+2. Using the Command Prompt window, navigate to the source code folder. (This should contain the pom.xml)
+
+3. Build the application using the following maven command: mvn clean install
+
+4. An executable war file will be created in the target folder.
+
+5. Run the war by navigating to the target and run the below command:
+
+java –jar <war_name>.war
+
+In our case it should be: java –jar curr-conv-app.war
+
+6. This will invoke the Spring Boot application, which will finally make application available to end user. 
+
+7. The application has been deployed and is available at the following location:
+
+https://curr-conv-app.herokuapp.com/
+
+Build the project using
+
+    mvn clean install
+
+Run up the following command to start the application as a stand-alone process
+
+    java -jar target/expense-manager-application-1.0.0.jar server expense-manager-configuration.yml
+    
+    
+## Accessing the application
+
+The application can be accessed using the below URL:
+
+	http://localhost:8080/
+    
+
+## Accessing the Application Health Check
+Navigate to
+
+    http://localhost:8080/admin
+
+This will provide links to an operational menu. Click on Health Check link to view the Database Health-check data.
+
+## Technologies used
+
+1. The REST API has been developed using the dropwizard framework. Given the requirements of this activity, drop-wizard seemed like a quintessential fit. It comes bundled with modules (Jetty, Jersey, Jackson, Guava, Metrics) required to assist in building a REST API. The framework assists in seam-less integration of these modules.
+
+2. The database access layer uses the SQL Objects API (further explanation in com.alchtec.expensemanager.dao.ExpenseDAO.java)
+
+3. JUnit tests.
+
+4. My SQL has been used as the database.

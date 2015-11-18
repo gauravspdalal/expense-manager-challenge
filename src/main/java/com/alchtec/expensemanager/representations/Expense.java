@@ -2,24 +2,26 @@ package com.alchtec.expensemanager.representations;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Objects;
 
 import javax.validation.constraints.NotNull;
 
+import com.google.common.base.MoreObjects;
+
 /**
- * Entity model class to represent the expense details state.
+ * Representation class to represent the expense details state.
  * 
  * @author dalalgau
  *
  */
 public class Expense {
-	
-	private Integer id;
+
 	@NotNull
 	private Date date;
-	
+
 	@NotNull
 	private BigDecimal amount;
-	
+
 	@NotNull
 	private String reason;
 	private BigDecimal vatAmount;
@@ -33,10 +35,6 @@ public class Expense {
 
 	public Expense() {
 
-	}
-
-	public Integer getId() {
-		return id;
 	}
 
 	public BigDecimal getAmount() {
@@ -80,30 +78,22 @@ public class Expense {
 
 		Expense expense = (Expense) o;
 
-		if (date != null ? !date.equals(expense.date) : expense.date != null)
-			return false;
-		if (id != null ? !id.equals(expense.id) : expense.id != null)
-			return false;
-		if (amount != null ? !amount.equals(expense.amount) : expense.amount != null)
-			return false;
-		if (reason != null ? !reason.equals(expense.reason) : expense.reason != null)
-			return false;
-
-		return true;
+		return Objects.equals(this.date, expense.date) && Objects.equals(this.amount, expense.amount)
+				&& Objects.equals(this.reason, expense.reason);
 	}
 
 	@Override
 	public int hashCode() {
-		int result = id != null ? id.hashCode() : 0;
-		result = 31 * result + (date != null ? date.hashCode() : 0);
+		int result = date != null ? date.hashCode() : 0;
 		result = 31 * result + (amount != null ? amount.hashCode() : 0);
 		result = 31 * result + (reason != null ? reason.hashCode() : 0);
 		return result;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Expense: date:"+this.date+"\nAmount:"+this.amount+"\nReason:"+this.reason+"\nVAT Amount:"+this.vatAmount;
+		return MoreObjects.toStringHelper(this).add("date", date).add("amount", amount).add("reason", reason)
+				.add("vatAmount", vatAmount).toString();
 	}
 
 }
