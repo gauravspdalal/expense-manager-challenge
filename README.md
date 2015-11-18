@@ -48,11 +48,19 @@ In our case it should be:
 
 The application can be accessed using the below URL:
 
-	http://localhost:8080/
+	http://server_name:server_port/
+
+For e.g.
+
+	http://localhost:8080	
     
 
 ## Accessing the Application Health Check
 Navigate to
+
+	http://server_name:server_port/admin
+	
+For e.g.
 
     http://localhost:8080/admin
 
