@@ -4,9 +4,9 @@
 
 This module is responsible for the following:
 
-i. Provides a User Interface to Add Expenses with the respective date and reason.
-ii. Calculates the VAT Amount on the fly. (Assuming that the Amount value entered is inclusive of 20% VAT).
-iii. Maintains and Displays a list of all expenses added by the user. 
+i. Providing a UI to Add Expenses to the database.
+ii. VAT Amount can be calculated on the fly. (Assuming that the Amount value entered is inclusive of 20% VAT).
+iii. Maintain and Display a list of all expenses added by the user. 
 
 ## Build and Run the Application
 
@@ -35,13 +35,13 @@ Perform the below steps to build the application jar and run the same.
 
 5. Run the jar by navigating to the target and run the below command:
 
-	java –jar <jar_name>.jar server <configuration-file-name>.yml
+	java –jar <<jar_name>>.jar server <<configuration-file-name>>.yml
 
 In our case it should be: 
 	
 	java -jar target/expense-manager-application-1.0.0.jar server expense-manager-configuration.yml
 
-6. This will invoke the Dropwizard ExpenseManagerApplication, which will make the application available to end user. 
+6. This will invoke the Dropwizard ExpenseManagerApplication, which will finally make application available to end user. 
 
     
 ## Accessing the application
